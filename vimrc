@@ -58,7 +58,7 @@ source ~/.vim/bundles.vim
 set statusline=+'%<\ %f\ %{fugitive#statusline()}'
 
 set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags
-
+set colorcolumn=80
 "######## YiXiang's Settings ############"
 "------ vim's Settings -------"
     set hls
@@ -66,14 +66,30 @@ set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags
 
 "------ NERDTree's Settings ---"
     let NERDTreeHighlightCursorline=0
-    map <F2> :NERDTreeToggle <CR>
+    let NERDTreeWinPos = "right"
+    map <F3> :NERDTreeToggle <CR>
 "------ End of NERDTree's Settings ---"
 
 "----- Taglist's Settings -----"
-    let Tlist_Use_Right_Window = 1
-    map <F3> :TlistToggle <CR>
+    let Tlist_Use_Right_Window = 0
+    map <F2> :TlistToggle <CR>
 "----- End of Taglist's Settings -----"
 
-"----- Scheme's setting ---"
-    let t_Co=256
+""----- Scheme's setting ---"
+    "colorscheme desert
+    set t_Co=256
     colorscheme desert
+" Remove trailing whitespace when writing a buffer, but not for diff files.
+" From: Vigil <vim5632@rainslide.net>
+function RemoveTrailingWhitespace()
+    if &ft != "diff"
+       let b:curcol = col(".")
+       let b:curline = line(".")
+       silent! %s/\s\+$//
+       silent! %s/\(\s*\n\)\+\%$//
+       call cursor(b:curline, b:curcol)
+    endif
+endfunction
+autocmd BufWritePre * call RemoveTrailingWhitespace()
+"--- Show line number ---"
+set nu
