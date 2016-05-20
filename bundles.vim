@@ -14,6 +14,7 @@ Bundle 'ervandew/supertab'
 Bundle 'wesleyche/SrcExpl'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'msanders/snipmate.vim'
+Bundle 'Lokaltog/vim-powerline'
 "*** vim-scripts Repo ***"
 Bundle 'taglist.vim'
 Bundle 'L9'

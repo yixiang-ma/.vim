@@ -56,7 +56,8 @@ source ~/.vim/bundles.vim
 
 " my configuration which depends on bundles
 set statusline=+'%<\ %f\ %{fugitive#statusline()}'
-
+set fileformat=unix
+set encoding=utf-8
 set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags
 set colorcolumn=80
 "######## YiXiang's Settings ############"
@@ -65,9 +66,15 @@ set colorcolumn=80
 "------ End of vim's Settings -------"
 
 "------ NERDTree's Settings ---"
-    let NERDTreeHighlightCursorline=0
+    let NERDTreeHighlightCursorline = 0
     let NERDTreeWinPos = "right"
+    let NERDTreeDirArrowExpandable = "+"
+    let NERDTreeDirArrowCollapsible = "~"
     map <F3> :NERDTreeToggle <CR>
+"------ End of NERDTree's Settings ---"
+
+"------ Powerline's Settings ---"
+    let g:Powerline_symbols = 'fancy'
 "------ End of NERDTree's Settings ---"
 
 "----- Taglist's Settings -----"
