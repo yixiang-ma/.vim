@@ -10,6 +10,7 @@ Bundle 'tpope/vim-fugitive'
 "### YiXiang's Utils ###"
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
+Bundle 'jlanzarotta/bufexplorer'
 Bundle 'ervandew/supertab'
 Bundle 'wesleyche/SrcExpl'
 Bundle 'Lokaltog/vim-easymotion'

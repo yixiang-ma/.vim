@@ -101,6 +101,8 @@ if has("cscope")
     \:silent execute "!grep -v test ./cscope_with_test.files > cscope.files"<CR>
     \:silent execute "!cscope -b -i cscope.files -f cscope.out"<CR>
     \:cs reset<CR>
+
+    set cscopequickfix=s-,c-,d-,i-,t-,e-
     " Using 'CTRL-spacebar' (intepreted as CTRL-@ by vim) then a search type
     " makes the vim window split horizontally, with search result displayed in
     " the new window.
