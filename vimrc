@@ -54,12 +54,29 @@ endif
 " Vundle and bundles configuration
 source ~/.vim/bundles.vim
 
+" Highlight search results
+set hlsearch
+set backspace=2
+
+"Always show current position
+set ruler
+set showmode
+
+set showcmd
+set showmatch
+set shiftwidth=4
+set tabstop=4
+set expandtab
+set incsearch
+set history=3000
+
 " my configuration which depends on bundles
 set statusline=+'%<\ %f\ %{fugitive#statusline()}'
 set fileformat=unix
 set encoding=utf-8
 set tags=./tags,tags,../tags,../../tags,../../../tags,../../../../tags
 set colorcolumn=80
+set hidden
 "######## YiXiang's Settings ############"
 "------ vim's Settings -------"
     set hls
@@ -82,10 +99,16 @@ set colorcolumn=80
     map <F2> :TlistToggle <CR>
 "----- End of Taglist's Settings -----"
 
+""----- Easymotion's Settings -----"
+    map \\h <Plug>(easymotion-linebackward)
+    map \\l <Plug>(easymotion-lineforward)
+""----- End of Taglist's Settings -----"
+
 ""----- Scheme's setting ---"
     "colorscheme desert
     set t_Co=256
     colorscheme desert
+
 " Remove trailing whitespace when writing a buffer, but not for diff files.
 " From: Vigil <vim5632@rainslide.net>
 function RemoveTrailingWhitespace()
@@ -100,3 +123,6 @@ endfunction
 autocmd BufWritePre * call RemoveTrailingWhitespace()
 "--- Show line number ---"
 set nu
+
+"--- GUI Fout --"
+    set guifont=DejaVu\ Sans\ Mono\ Bold\ 15
